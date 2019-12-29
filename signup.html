@@ -48,7 +48,6 @@ git push
             console.log("genders: " + genders);
             
             let gender = "";
-
             for (let i = 0, len = genders.length; i < len; i++){
                if(genders[i].checked){
                    gender = genders[i].value;
@@ -94,7 +93,6 @@ git push
                 return false;
             }
             profile.password = password.value;
-
             if (courses.selectedIndex < 0) {
                 alert("Please enter your course.");
                 courses.focus();
@@ -128,6 +126,18 @@ git push
              alert("Please give your good name."); 
              textInput.focus();   
            }
+           }
+        function checkAge(ageInput){
+        
+            alert(ageInput.value);
+              if(ageInput.value < 5){
+              alert("You must be older than 5 years old to participate");
+              }
+            	
+            if(ageInput.value > 100){
+            alert("You must be younger than 100 years old to participate");
+            }
+           
 
         }
     </script>
@@ -158,6 +168,10 @@ git push
             <input type="text" size=65 name="lastName"> </p>
         <p>Date of Birth:
             <input type="date" size=65 name="dateBirth"> </p>
+        <p>Age:
+        <input type="number" size=65 name="Age" onchange = "checkAge(this);"> 
+        
+        </p>
         <p>Please select your gender:</p>
             <input type="radio" name="gender" value="male">Male<br>
             <input type="radio" name="gender" value="female">Female<br>
