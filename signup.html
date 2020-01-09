@@ -133,13 +133,18 @@ git push
               if(ageInput.value < 5){
               alert("You must be older than 5 years old to participate");
               }
-            	
+            
             if(ageInput.value > 100){
             alert("You must be younger than 100 years old to participate");
             }
            
 
         }
+        
+        function checkBirth(dateInput){
+            alert(dateInput.value);
+            
+            }
     </script>
 
     <style>
@@ -165,9 +170,9 @@ git push
         <p>First Name:
             <input type="text" size=65 name="firstName" onchange = "checkName(this);"> </p>
         <p>Last Name:
-            <input type="text" size=65 name="lastName"> </p>
+            <input type="text" size=65 name="lastName" onchange = "checkName(this);"> </p>
         <p>Date of Birth:
-            <input type="date" size=65 name="dateBirth"> </p>
+            <input type="date" size=65 name="dateBirth" onchange = "checkBirth(this);"> </p>
         <p>Age:
         <input type="number" size=65 name="Age" onchange = "checkAge(this);"> 
         
