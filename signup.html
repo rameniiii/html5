@@ -143,6 +143,16 @@ git push
         
         function checkBirth(dateInput){
             alert(dateInput.value);
+            let bd = new Date (dateInput.value);
+            let now = new Date ();
+            let age = now.getYear ()-bd.getYear();
+            alert(age);
+            if (age < 5){
+            alert("You must be older than 5 years old to participate");
+            }
+            if (age > 100){
+            alert("You must be younger than 100 years old to participate");
+            }
             
             }
     </script>
