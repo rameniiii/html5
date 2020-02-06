@@ -136,6 +136,7 @@ git push
             
             if(ageInput.value > 100){
             alert("You must be younger than 100 years old to participate");
+            
             }
            
 
@@ -155,6 +156,25 @@ git push
             }
             
             }
+            
+         function checkGender(what) {
+       		alert(what);
+       
+         }
+         
+       	function checkAddress(addInput){
+        	alert(addInput.value);
+            
+        }	
+        function checkEmail(email){
+       		 alert(email);
+             if(!email.includes("@")){alert("Your email address is incomplete.")}
+        }
+        
+        function checkPassword(password){
+        	alert(password);
+        	if(password.length < 5){alert("Your password must have at least 5 characters.")}
+        }
     </script>
 
     <style>
@@ -188,15 +208,15 @@ git push
         
         </p>
         <p>Please select your gender:</p>
-            <input type="radio" name="gender" value="male">Male<br>
-            <input type="radio" name="gender" value="female">Female<br>
-            <input type="radio" name="gender" value="other">Other<br>               
+            <input type="radio" name="gender" value="Male" onchange = "checkGender('Male');">Male<br> 
+            <input type="radio" name="gender" value="Female" onchange = "checkGender('Female');">Female<br>
+            <input type="radio" name="gender" value="Other" onchange = "checkGender('Other');">Other<br>               
         <p> Address:
-            <input type="text" size=65 name="address"> </p>
+            <input type="text" size=65 name="address" onchange = "checkAddress(this);"> </p>
         <p>E-mail Address:
-            <input type="email" size=65 name="email"> </p>
+            <input type="email" size=65 name="email" onchange = "checkEmail(this.value);"> </p>
         <p>Password:
-            <input type="password" size=65 name="password"> </p>
+            <input type="password" size=65 name="password" onchange = "checkPassword(this.value);"> </p>
         <p>Telephone:
             <input type="text" size=65 name="phone"> </p>
 
