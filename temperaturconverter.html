@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Temperature Converter</h2>
+
+    <input type="number" id="F" onchange="fromFh();"> &deg;F
+
+    <script>
+        function fromFh() {
+
+            let fahr = document.getElementById("F").value
+
+            let celcius = (((fahr - 32) * 5) / 9);
+
+            document.getElementById("C").value = celcius.toFixed(1);
+
+        }
+
+        function fromCel() {
+
+            let celcius = document.getElementById("C").value
+
+            let fahr = (9 / 5) * celcius + 32
+
+            document.getElementById("F").value = fahr.toFixed(1);
+
+        }
+    </script>
+    <button>Converts to</button>
+    <input type="number" id="C" onchange="fromCel();"> &deg;C
+</body>
+
+</html>
