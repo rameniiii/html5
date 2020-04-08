@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script>
+        function fromChar() {
+
+            let chara = document.getElementById("char").value
+            let numb = chara.charCodeAt(0)
+
+            document.getElementById("N").value = numb
+
+        }
+
+        function fromNumb() {
+
+            let numb = document.getElementById("N").value
+            let chara = String.fromCharCode(numb)
+
+            document.getElementById("char").value = chara
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h2>String Ascii Code Conversion</h2>
+
+    <p>Please enter a character.</p>
+
+    <input type="text" id="char" onchange="fromChar();">
+
+    <button>Converts to</button>
+
+    <input type="number" id="N" onchange="fromNumb();">
+
+</body>
+
+</html>
