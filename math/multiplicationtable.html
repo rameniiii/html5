@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Page Title</title>
+	<script>
+
+	</script>
+	<style>
+		BODY {
+			color: Black;
+			background-color: White;
+			font-family: Verdana, Tahoma, sans-serif;
+			font-size: 10px;
+		}
+
+		table {
+			border-width: 2px;
+		}
+
+		th {
+			font-size: 14px;
+			text-align: center;
+			border-style: solid;
+			border-width: 2px;
+			border-color: Black;
+		}
+
+		td {
+			width: 30px;
+			font-size: 12px;
+			text-align: center;
+			margin-top: 12px;
+			border-style: solid;
+			border-width: 1px;
+			border-color: Black;
+		}
+
+		.reverse {
+			font-size: 14px;
+			background: Black;
+			color: White;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h2> Multiplication Table Generator</h2>
+	<p>
+		Input any number - be responsible!
+		<script>
+			function makeTable(){
+ 
+ let start = 1*document.getElementById("start").value
+ let size = 10;
+ let tr ='<tr><th class="reverse"><b>&times;</b></th>'; 
+ for (let i = start; i < start + size; i++ ){
+ tr += "<th>" + i + "</th>"
+ } 
+tr+="</tr>"
+ 
+
+   let body = ""
+for (let i = start; i < start + size; i++ ){
+ body += "<tr><th>"+ i +"</th><td>"+i*1
+ +"</td><td>"+i*2+"</td><td>"+i*3+"</td><td>"+i*4+"</td><td>"+i*5+"</td><td>"+i*6+"</td><td>"+i*7+"</td><td>"+i*8+"</td><td>"+(i*9)+"</td><td>"+i*10+"</td></tr>"
+ 
+
+ } 
+ 
+
+ document.getElementById("timestable").innerHTML=tr+body;
+
+   }
+		</script>
+		<input type="number" id="start" onchange="makeTable();">
+<table id = "timestable">
+             
+</table>
+
+
+</body>
+</html>

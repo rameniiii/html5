@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function isOdd() {
+                let numb = document.getElementById("numb").value;
+                let answer = "Yes";
+                if (numb % 2 === 1) answer = "Yes";
+                else answer = "No";
+                document.getElementById("result").innerText = answer;
+            }
+
+            function generate() {
+                document.getElementById("numb").value = Math.round(Math.random() * 1000);
+            }
+
+            function isPerfectSquare() {
+                let numb = document.getElementById("numb").value;
+                let sqrt = "Yes";
+                if (numb % Math.sqrt(numb) === 0) sqrt = "Yes";
+                else sqrt = "No";
+                document.getElementById("result").innerText = sqrt;
+            }
+
+            function factNumb() {
+                let numb = document.getElementById("numb").value;
+                let factors = [];
+                for (let i = 1; i <= numb; i++) {
+                    if (numb % i === 0) factors.push(i);
+                    document.getElementById("result").innerText = factors;
+                }
+            }
+
+            function primeFactor() {
+                let numb = document.getElementById("numb").value;
+                let primes = [];
+                for (let j = 2; j <= numb; ) {
+                    if (numb % j === 0) {
+                        primes.push(j);
+                        numb /= j;
+                    } else {
+                        j++;
+                    }
+
+                    document.getElementById("result").innerText = primes;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2>Number Theory</h2>
+
+        <p>Input any number.</p>
+        <input id="numb" type="number" size="20" />
+
+        <button onclick="generate()">Generate a number.</button>
+        <p>
+            <button onclick="isOdd()">Is it odd?</button>
+            <button onclick="isPerfectSquare()">Is it a perfect square?</button>
+            <button onclick="factNumb()">Factor</button>
+            <button onclick="primeFactor()">Prime Factorization</button>
+        </p>
+
+        <div id="result"></div>
+    </body>
+</html>
